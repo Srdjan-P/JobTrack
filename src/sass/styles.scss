@@ -20,7 +20,8 @@ body {}
 
   main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
     padding: 2rem;
 
     .filters {
@@ -33,9 +34,50 @@ body {}
     }
 
     .jobs-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
       border: 1px solid black;
-      width: 70%;
+      max-width: 55rem;
+      height: fit-content;
       padding: 2rem;
+      gap: 2rem;
+
+      .application-card {
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+        min-width: 20rem;
+        height: fit-content;
+        border: 1px solid black;
+        padding: 1rem;
+        gap: 1rem;
+
+        .application-header {
+          display: flex;
+          justify-content: space-between;
+          height: fit-content;
+          align-items: center;
+
+          .company-name {
+            font-size: 1.5rem;
+          }
+        }
+
+        .position {}
+
+        .dates {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .notes {}
+
+        .actions {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
     }
   }
 }
