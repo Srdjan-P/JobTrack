@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Stats from "./components/Stats";
 import Filters from "./components/Filters"
 import JobApplicationsList from "./components/JobApplicationsList"
+import ApplicationForm from "./components/ApplicationForm";
 
 const initialApplications = [
   {
@@ -54,5 +55,6 @@ export default function App() {
       <Filters />
       <JobApplicationsList initialData={initialApplications} />
     </Main>
+    {/* <ApplicationForm /> */}
   </div>
 }
