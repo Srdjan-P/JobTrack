@@ -16,6 +16,22 @@ body {}
     align-items: center;
     padding: 5rem;
     background-color: lightblue;
+
+    .stats {
+      display: flex;
+      gap: 1rem;
+
+      .stats-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.8rem;
+        border: 1px solid black;
+        width: 8rem;
+      }
+    }
   }
 
   main {
@@ -28,54 +44,67 @@ body {}
       border: 1px solid black;
       padding: 2rem;
       width: 25%;
+      max-width: 15rem;
       height: 20rem;
       display: flex;
       justify-content: center;
     }
 
-    .jobs-list {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    .jobs-container {
       border: 1px solid black;
-      max-width: 55rem;
-      height: fit-content;
+      display: flex;
+      flex-direction: column;
       padding: 2rem;
-      gap: 2rem;
+      max-width: 55rem;
 
-      .application-card {
+
+      .jobs-top {
         display: flex;
-        flex-direction: column;
-        width: 48%;
-        min-width: 20rem;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+
+      .jobs-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
         height: fit-content;
-        border: 1px solid black;
-        padding: 1rem;
-        gap: 1rem;
+        gap: 2rem;
 
-        .application-header {
+        .application-card {
           display: flex;
-          justify-content: space-between;
+          flex-direction: column;
+          width: 48%;
+          min-width: 20rem;
           height: fit-content;
-          align-items: center;
+          border: 1px solid black;
+          padding: 1rem;
+          gap: 1rem;
 
-          .company-name {
-            font-size: 1.5rem;
+          .application-header {
+            display: flex;
+            justify-content: space-between;
+            height: fit-content;
+            align-items: center;
+
+            .company-name {
+              font-size: 1.5rem;
+            }
           }
-        }
 
-        .position {}
+          .position {}
 
-        .dates {
-          display: flex;
-          justify-content: space-between;
-        }
+          .dates {
+            display: flex;
+            justify-content: space-between;
+          }
 
-        .notes {}
+          .notes {}
 
-        .actions {
-          display: flex;
-          justify-content: space-between;
+          .actions {
+            display: flex;
+            justify-content: space-between;
+          }
         }
       }
     }
