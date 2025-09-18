@@ -1,9 +1,9 @@
-export default function ApplicationForm() {
+export default function ApplicationForm({ onOpen }) {
   return <div className="form-container">
     <div className="form-window">
       <div className="form-header">
         <h2>Add Job Application</h2>
-        <button>X</button>
+        <button onClick={() => onOpen(false)}>X</button>
       </div>
       <form>
         <div className="form-row">

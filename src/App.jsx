@@ -5,6 +5,7 @@ import Stats from "./components/Stats";
 import Filters from "./components/Filters"
 import JobApplicationsList from "./components/JobApplicationsList"
 import ApplicationForm from "./components/ApplicationForm";
+import { useState } from "react";
 
 const initialApplications = [
   {
@@ -46,6 +47,8 @@ const initialApplications = [
 ];
 
 export default function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return <div className="app-layout">
     <Nav>
       <Logo />
@@ -53,8 +56,10 @@ export default function App() {
     </Nav>
     <Main>
       <Filters />
-      <JobApplicationsList initialData={initialApplications} />
+      <JobApplicationsList initialData={initialApplications} onOpen={setIsOpen} />
     </Main>
-    {/* <ApplicationForm /> */}
+    {isOpen &&
+      <ApplicationForm onOpen={setIsOpen} />
+    }
   </div>
 }
