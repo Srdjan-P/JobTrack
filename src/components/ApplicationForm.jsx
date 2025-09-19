@@ -15,15 +15,19 @@ export default function ApplicationForm({ onOpen, onAddApplication }) {
   function handleSubmit(e) {
     e.preventDefault();
 
+    const capitalize = (str) => {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+
     const id = crypto.randomUUID();
     const newApplication = {
       id,
-      company,
-      position,
-      status,
+      company: capitalize(company),
+      position: capitalize(position),
+      status: capitalize(status),
       dateApplied,
       nextInterview,
-      notes,
+      notes: capitalize(notes),
     };
     onAddApplication(newApplication), onOpen(false);
   }
@@ -53,7 +57,6 @@ export default function ApplicationForm({ onOpen, onAddApplication }) {
                 required
                 value={position}
                 onChange={(e) => setPosition(e.target.value)}
-                autoCapitalize="words"
               />
             </div>
           </div>

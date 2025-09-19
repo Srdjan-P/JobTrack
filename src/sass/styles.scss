@@ -74,9 +74,11 @@ body {
         .application-card {
           display: flex;
           flex-direction: column;
+          justify-content: space-between;
           flex: 1;
           min-width: 20rem;
           max-width: 48%;
+          min-height: 15rem;
           height: fit-content;
           border: 1px solid black;
           padding: 1rem;
@@ -163,8 +165,4 @@ body {
       min-height: 7rem;
     }
   }
-}
-
-.capitalize-text {
-  text-transform: capitalize;
 }
