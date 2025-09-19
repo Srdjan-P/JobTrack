@@ -58,7 +58,7 @@ export default function App() {
     <div className="app-layout">
       <Nav>
         <Logo />
-        <Stats />
+        <Stats applications={applications} />
       </Nav>
       <Main>
         <Filters />
