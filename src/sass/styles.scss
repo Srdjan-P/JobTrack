@@ -8,7 +8,8 @@ $secondaryColor: rgb(24, 40, 72);
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
 }
 
 .app-layout {
@@ -82,25 +83,31 @@ body {
       max-width: 75rem;
 
       .filters {
-        border: 1px solid black;
         padding: 2rem;
         width: 20rem;
         height: 20rem;
         display: flex;
         justify-content: center;
+        background-color: white;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
+        border-radius: 0.6rem;
       }
 
       .jobs-container {
-        border: 1px solid black;
         display: flex;
         flex-direction: column;
         padding: 2rem;
         max-width: 55rem;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
+        background-color: white;
+        border-radius: 0.6rem;
 
         .jobs-top {
           display: flex;
           justify-content: space-between;
           margin-bottom: 2rem;
+          font-size: 1.2rem;
+          color: $secondaryColor;
         }
 
         .jobs-list {
@@ -119,9 +126,11 @@ body {
             max-width: 48%;
             min-height: 15rem;
             height: fit-content;
-            border: 1px solid black;
+            box-shadow: 0 2px 10px 5px rgba(0, 0, 0, 0.05);
             padding: 1rem;
             gap: 1rem;
+            border-left: 0.4rem solid $primaryColor;
+            border-radius: 1rem;
 
             .application-header {
               display: flex;
@@ -131,23 +140,56 @@ body {
 
               .company-name {
                 font-size: 1.5rem;
+                font-weight: bold;
+              }
+
+              .status {
+                padding: 0.4rem 0.8rem;
+                border-radius: 1rem;
+                font-weight: 600;
+                min-width: 6rem;
+                text-align: center;
+              }
+
+              .blue {
+                background-color: rgba(215, 230, 252, 0.759);
+                color: blue;
+              }
+
+              .green {
+                background-color: rgba(216, 255, 216, 0.725);
+                color: green;
+              }
+
+              .yellow {
+                background-color: rgba(249, 249, 209, 0.695);
+                color: rgb(136, 141, 4);
+              }
+
+              .red {
+                background-color: rgba(247, 213, 213, 0.631);
+                color: red;
               }
             }
 
             .position {
+              font-size: 1.2rem;
             }
 
             .dates {
               display: flex;
               justify-content: space-between;
+              color: gray;
             }
 
             .notes {
+              color: gray;
             }
 
             .actions {
               display: flex;
               justify-content: space-between;
+              color: gray;
             }
           }
         }
@@ -205,4 +247,10 @@ body {
       min-height: 7rem;
     }
   }
+}
+
+.align {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }

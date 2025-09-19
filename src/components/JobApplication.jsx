@@ -1,28 +1,47 @@
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import EditNoteIcon from "@mui/icons-material/EditNote";
+
 export default function JobApplication({ data }) {
-  return <div className="application-card">
-    <div className="application-header">
-      <div className="company-name">
-        {data.company}
+  function statusClass() {
+    if (data.status.toLowerCase() === "applied") return "blue";
+    else if (data.status.toLowerCase() === "interview") return "yellow";
+    else if (data.status.toLowerCase() === "offer") return "green";
+    else if (data.status.toLowerCase() === "rejected") return "red";
+    else return "gray";
+  }
+
+  return (
+    <div className="application-card">
+      <div className="application-header">
+        <div className="company-name">{data.company}</div>
+        <div className={`status ${statusClass()}`}>{data.status}</div>
       </div>
-      <div>
-        {data.status}
+      <div className="position">{data.position}</div>
+      <div className="dates">
+        <span className="align">
+          <CalendarMonthIcon fontSize="small" style={{ color: "blue" }} />
+          <span>{data.dateApplied}</span>
+        </span>
+        <span className="align">
+          {data.nextInterview && (
+            <AccessTimeIcon fontSize="small" style={{ color: "blue" }} />
+          )}
+          <span>{data.nextInterview}</span>
+        </span>
+      </div>
+      <div className="notes">
+        <span className="align">
+          {data.notes && (
+            <EditNoteIcon fontSize="small" style={{ color: "blue" }} />
+          )}
+          <span>{data.notes}</span>
+        </span>
+      </div>
+      <div className="actions">
+        <span>Edit</span>
+        <span>Delete</span>
       </div>
     </div>
-    <div className="position">
-      {data.position}
-    </div>
-    <div className="dates">
-      <span>
-        {data.dateApplied}
-      </span>
-      <span>{data.nextInterview}</span>
-    </div>
-    <div className="notes">
-      {data.notes}
-    </div>
-    <div className="actions">
-      <span>Edit</span>
-      <span>Delete</span>
-    </div>
-  </div>
+  );
 }
