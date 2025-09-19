@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { format } from "date-fns";
+import Button from "./Button";
 
 export default function ApplicationForm({ onOpen, onAddApplication }) {
   const [company, setCompany] = useState("");
@@ -37,7 +38,9 @@ export default function ApplicationForm({ onOpen, onAddApplication }) {
       <div className="form-window">
         <div className="form-header">
           <h2>Add Job Application</h2>
-          <button onClick={() => onOpen(false)}>X</button>
+          <div className="cursor" onClick={() => onOpen(false)}>
+            ❌
+          </div>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
@@ -98,7 +101,7 @@ export default function ApplicationForm({ onOpen, onAddApplication }) {
               ></textarea>
             </div>
           </div>
-          <button>Save Application</button>
+          <Button>Save Application</Button>
         </form>
       </div>
     </div>
