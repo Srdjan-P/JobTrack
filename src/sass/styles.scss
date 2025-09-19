@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body {}
+body {
+}
 
 .app-layout {
   display: flex;
@@ -57,7 +58,6 @@ body {}
       padding: 2rem;
       max-width: 55rem;
 
-
       .jobs-top {
         display: flex;
         justify-content: space-between;
@@ -74,8 +74,9 @@ body {}
         .application-card {
           display: flex;
           flex-direction: column;
-          width: 48%;
+          flex: 1;
           min-width: 20rem;
+          max-width: 48%;
           height: fit-content;
           border: 1px solid black;
           padding: 1rem;
@@ -92,14 +93,16 @@ body {}
             }
           }
 
-          .position {}
+          .position {
+          }
 
           .dates {
             display: flex;
             justify-content: space-between;
           }
 
-          .notes {}
+          .notes {
+          }
 
           .actions {
             display: flex;
@@ -125,7 +128,8 @@ body {}
     background-color: white;
     padding: 2rem;
     width: 37rem;
-    height: 40rem;
+    min-height: 40rem;
+    height: fit-content;
 
     .form-header {
       display: flex;
@@ -145,7 +149,6 @@ body {}
           gap: 1rem;
           min-width: 48%;
           font-size: 1.2rem;
-
         }
 
         .full-width {
@@ -153,5 +156,15 @@ body {}
         }
       }
     }
+
+    textarea {
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 7rem;
+    }
   }
+}
+
+.capitalize-text {
+  text-transform: capitalize;
 }

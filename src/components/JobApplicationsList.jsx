@@ -1,6 +1,6 @@
 import JobApplication from "./JobApplication";
 
-export default function JobApplicationsList({ initialData, onOpen }) {
+export default function JobApplicationsList({ applications, onOpen }) {
   return (
     <div className="jobs-container">
       <div className="jobs-top">
@@ -8,8 +8,10 @@ export default function JobApplicationsList({ initialData, onOpen }) {
         <button onClick={() => onOpen(true)}>+ Add Application</button>
       </div>
       <div className="jobs-list">
-        {initialData.map((data) => <JobApplication data={data} key={data.id} />)}
+        {applications.map((data) => (
+          <JobApplication data={data} key={data.id} />
+        ))}
       </div>
     </div>
-  )
+  );
 }
