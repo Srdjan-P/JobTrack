@@ -1,3 +1,6 @@
+$primaryColor: rgb(75, 108, 183);
+$secondaryColor: rgb(24, 40, 72);
+
 * {
   padding: 0;
   margin: 0;
@@ -5,32 +8,63 @@
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .app-layout {
   display: flex;
   flex-direction: column;
 
-  nav {
+  header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 5rem;
-    background-color: lightblue;
+    padding: 2rem 1rem;
+    height: 12rem;
+    background: linear-gradient(135deg, $primaryColor 0%, $secondaryColor 100%);
+    margin-bottom: 2rem;
 
-    .stats {
+    .header-container {
       display: flex;
-      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 75rem;
 
-      .stats-box {
+      .logo {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        padding: 1.8rem;
-        border: 1px solid black;
-        width: 8rem;
+        align-items: end;
+        font-size: 2rem;
+        color: #fff;
+        font-weight: bold;
+        gap: 0.5rem;
+      }
+
+      .stats {
+        display: flex;
+        gap: 1.2rem;
+
+        .stats-box {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 1.3rem;
+          width: 7.6rem;
+          background-color: rgba(255, 255, 255, 0.2);
+          border-radius: 0.5rem;
+
+          .stat-number {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+          }
+
+          .stat-label {
+            color: white;
+          }
+        }
       }
     }
   }
@@ -39,76 +73,82 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1rem;
 
-    .filters {
-      border: 1px solid black;
-      padding: 2rem;
-      width: 25%;
-      max-width: 15rem;
-      height: 20rem;
+    .main-container {
       display: flex;
-      justify-content: center;
-    }
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 75rem;
 
-    .jobs-container {
-      border: 1px solid black;
-      display: flex;
-      flex-direction: column;
-      padding: 2rem;
-      max-width: 55rem;
-
-      .jobs-top {
+      .filters {
+        border: 1px solid black;
+        padding: 2rem;
+        width: 20rem;
+        height: 20rem;
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 2rem;
+        justify-content: center;
       }
 
-      .jobs-list {
+      .jobs-container {
+        border: 1px solid black;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        height: fit-content;
-        gap: 2rem;
+        flex-direction: column;
+        padding: 2rem;
+        max-width: 55rem;
 
-        .application-card {
+        .jobs-top {
           display: flex;
-          flex-direction: column;
           justify-content: space-between;
-          flex: 1;
-          min-width: 20rem;
-          max-width: 48%;
-          min-height: 15rem;
+          margin-bottom: 2rem;
+        }
+
+        .jobs-list {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
           height: fit-content;
-          border: 1px solid black;
-          padding: 1rem;
-          gap: 1rem;
+          gap: 2rem;
 
-          .application-header {
+          .application-card {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
+            flex: 1;
+            min-width: 20rem;
+            max-width: 48%;
+            min-height: 15rem;
             height: fit-content;
-            align-items: center;
+            border: 1px solid black;
+            padding: 1rem;
+            gap: 1rem;
 
-            .company-name {
-              font-size: 1.5rem;
+            .application-header {
+              display: flex;
+              justify-content: space-between;
+              height: fit-content;
+              align-items: center;
+
+              .company-name {
+                font-size: 1.5rem;
+              }
             }
-          }
 
-          .position {
-          }
+            .position {
+            }
 
-          .dates {
-            display: flex;
-            justify-content: space-between;
-          }
+            .dates {
+              display: flex;
+              justify-content: space-between;
+            }
 
-          .notes {
-          }
+            .notes {
+            }
 
-          .actions {
-            display: flex;
-            justify-content: space-between;
+            .actions {
+              display: flex;
+              justify-content: space-between;
+            }
           }
         }
       }

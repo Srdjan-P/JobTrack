@@ -10,13 +10,16 @@ export default function Stats({ applications }) {
   return (
     <div className="stats">
       <div className="stats-box">
-        <span>{numApplications}</span> Applications
+        <span className="stat-number">{numApplications}</span>
+        <span className="stat-label">Applications</span>
       </div>
       <div className="stats-box">
-        <span>{numInterviews}</span> Interviews
+        <span className="stat-number">{numInterviews}</span>
+        <span className="stat-label">Interviews</span>
       </div>
       <div className="stats-box">
-        <span>{numOffers}</span> Offers
+        <span className="stat-number">{numOffers}</span>
+        <span className="stat-label">Offers</span>
       </div>
     </div>
   );
