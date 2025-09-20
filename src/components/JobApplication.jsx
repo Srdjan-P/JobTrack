@@ -20,21 +20,19 @@ export default function JobApplication({ data, onDelete }) {
       <div className="position">{data.position}</div>
       <div className="dates">
         <span className="align">
-          <CalendarMonthIcon fontSize="small" style={{ color: "blue" }} />
+          <CalendarMonthIcon fontSize="small" className="color" />
           <span>{data.dateApplied}</span>
         </span>
         <span className="align">
           {data.nextInterview && (
-            <AccessTimeIcon fontSize="small" style={{ color: "blue" }} />
+            <AccessTimeIcon fontSize="small" className="color" />
           )}
           <span>{data.nextInterview}</span>
         </span>
       </div>
       <div className="notes">
         <span className="align">
-          {data.notes && (
-            <EditNoteIcon fontSize="small" style={{ color: "blue" }} />
-          )}
+          {data.notes && <EditNoteIcon fontSize="small" className="color" />}
           <span>{data.notes}</span>
         </span>
       </div>

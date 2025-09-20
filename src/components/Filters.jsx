@@ -22,7 +22,7 @@ export default function Filters({ applications, setFilteredData }) {
       <h2>Filters</h2>
       <h3>Status</h3>
       <div className="filters-container">
-        <label>
+        <label className={filterBy === "all" ? "active" : ""}>
           <input
             type="radio"
             name="filter"
@@ -32,7 +32,7 @@ export default function Filters({ applications, setFilteredData }) {
           />
           All Applications
         </label>
-        <label>
+        <label className={filterBy === "applied" ? "active" : ""}>
           <input
             type="radio"
             name="filter"
@@ -42,7 +42,7 @@ export default function Filters({ applications, setFilteredData }) {
           />
           Applied
         </label>
-        <label>
+        <label className={filterBy === "interview" ? "active" : ""}>
           <input
             type="radio"
             name="filter"
@@ -52,7 +52,7 @@ export default function Filters({ applications, setFilteredData }) {
           />
           Interview
         </label>
-        <label>
+        <label className={filterBy === "offer" ? "active" : ""}>
           <input
             type="radio"
             name="filter"
@@ -62,7 +62,7 @@ export default function Filters({ applications, setFilteredData }) {
           />
           Offer
         </label>
-        <label>
+        <label className={filterBy === "rejected" ? "active" : ""}>
           <input
             type="radio"
             name="filter"

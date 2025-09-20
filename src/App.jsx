@@ -53,11 +53,15 @@ export default function App() {
 
   function handleAddApplication(application) {
     setApplications((applications) => [...applications, application]);
+    setFilteredData((filteredData) => [...filteredData, application]);
   }
 
   function handleDeleteApp(id) {
     setApplications((applications) =>
       applications.filter((application) => application.id !== id)
+    );
+    setFilteredData((filteredData) =>
+      filteredData.filter((application) => application.id !== id)
     );
   }
 
