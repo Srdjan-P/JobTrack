@@ -54,6 +54,12 @@ export default function App() {
     setApplications((applications) => [...applications, application]);
   }
 
+  function handleDeleteApp(id) {
+    setApplications((applications) =>
+      applications.filter((application) => application.id !== id)
+    );
+  }
+
   return (
     <div className="app-layout">
       <Header>
@@ -62,7 +68,11 @@ export default function App() {
       </Header>
       <Main>
         <Filters />
-        <JobApplicationsList applications={applications} onOpen={setIsOpen} />
+        <JobApplicationsList
+          applications={applications}
+          onOpen={setIsOpen}
+          onDelete={handleDeleteApp}
+        />
       </Main>
       {isOpen && (
         <ApplicationForm

@@ -2,7 +2,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 
-export default function JobApplication({ data }) {
+export default function JobApplication({ data, onDelete }) {
   function statusClass() {
     if (data.status.toLowerCase() === "applied") return "blue";
     else if (data.status.toLowerCase() === "interview") return "yellow";
@@ -39,8 +39,10 @@ export default function JobApplication({ data }) {
         </span>
       </div>
       <div className="actions">
-        <span>Edit</span>
-        <span>Delete</span>
+        <span className="cursor">Edit</span>
+        <span className="cursor" onClick={() => onDelete(data.id)}>
+          Delete
+        </span>
       </div>
     </div>
   );
