@@ -40,7 +40,7 @@ export default function JobApplication({ data, onDelete }) {
       </div>
       <div className="actions">
         <span className="cursor">Edit</span>
-        <span className="cursor" onClick={() => onDelete(data.id)}>
+        <span className="cursor delete" onClick={() => onDelete(data.id)}>
           Delete
         </span>
       </div>
