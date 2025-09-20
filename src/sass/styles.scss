@@ -118,14 +118,29 @@ body {
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.05);
         border-radius: 0.6rem;
 
-        h2 {
+        .filters-toggle {
+          display: none;
+          cursor: pointer;
+          border-bottom: 2px solid $darkestColor;
+          padding-bottom: 0.7rem;
+          margin-bottom: 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .toggle-icon {
+            font-size: 0.8rem;
+          }
+        }
+
+        h2:not(.filters-toggle) {
           border-bottom: 2px solid $darkestColor;
           padding-bottom: 0.7rem;
           margin-bottom: 1.5rem;
         }
 
         h3 {
-          margin-bottom: 1rem;
+          margin: 1rem 0;
         }
 
         .filters-container {
@@ -380,88 +395,106 @@ body {
           flex-direction: column;
           .filters {
             width: 100%;
+
+            .filters-toggle {
+              display: flex;
+            }
+
+            .filters-content {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.3s ease;
+
+              &.open {
+                max-height: 15rem;
+
+                h2:not(.filters-toggle) {
+                  display: none;
+                }
+              }
+            }
+          }
+          .jobs-container {
+            width: 100%;
           }
         }
-        .jobs-container {
-          width: 100%;
-        }
       }
-    }
-    .form-container {
-      padding: 1rem;
-      .form-window {
-        height: 100%;
-        width: 100%;
-        overflow: scroll;
+      .form-container {
+        padding: 1rem;
+        .form-window {
+          height: 100%;
+          width: 100%;
+          overflow: scroll;
 
-        form {
-          .form-row {
-            gap: 1rem;
-            flex-direction: column;
+          form {
+            .form-row {
+              gap: 1rem;
+              flex-direction: column;
+            }
           }
         }
       }
     }
   }
-}
 
-@media (max-width: 690px) {
-  body {
-    .app-layout {
-      header {
-        padding: 8rem;
-        margin-bottom: 0;
-        .header-container {
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: 2rem;
-          height: 100%;
-          width: 100%;
+  @media (max-width: 690px) {
+    body {
+      .app-layout {
+        header {
+          padding: 8rem;
+          margin-bottom: 0;
+          .header-container {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            height: 100%;
+            width: 100%;
 
-          .stats {
-            width: 100vw;
-            justify-content: space-evenly;
-            gap: 0;
-            .stats-box {
-              width: 7rem;
-              gap: 0;
-              padding: 0.8rem;
+            .stats {
+              width: 90vw;
+              justify-content: space-evenly;
+              gap: 0.5rem;
+              .stats-box {
+                min-width: 6rem;
+                gap: 0;
+                padding: 0.8rem;
+              }
             }
           }
         }
-      }
 
-      main {
-        .main-container {
-          flex-direction: column;
-          .filters {
-            width: 100%;
-          }
-          .jobs-container {
-            width: 100%;
-            padding: 0;
-
-            .jobs-top {
-              padding: 1.3rem;
-              margin: 0;
-              align-items: center;
-
-              h2 {
-                font-size: 1.5rem;
-              }
-
-              button {
-                padding: 0.7rem;
-                height: 3rem;
-                gap: 0;
-              }
+        main {
+          .main-container {
+            flex-direction: column;
+            .filters {
+              width: 100%;
             }
+            .jobs-container {
+              width: 100%;
+              padding: 0;
 
-            .jobs-list {
-              padding: 1rem;
-              .application-card {
-                min-width: 100%;
+              .jobs-top {
+                padding: 1.3rem;
+                margin: 0;
+                align-items: center;
+
+                h2 {
+                  font-size: 1.5rem;
+                }
+
+                button {
+                  padding: 0.7rem;
+                  height: 3rem;
+                  gap: 0;
+                }
+              }
+
+              .jobs-list {
+                padding: 1rem;
+                .application-card {
+                  min-width: 100%;
+                }
               }
             }
           }
