@@ -11,8 +11,6 @@ export default function ApplicationForm({ onOpen, onAddApplication }) {
   const [nextInterview, setNextInterview] = useState("");
   const [notes, setNotes] = useState("");
 
-  console.log(curDate);
-
   function handleSubmit(e) {
     e.preventDefault();
 

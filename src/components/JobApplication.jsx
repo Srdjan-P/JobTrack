@@ -1,6 +1,8 @@
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import EditNoteIcon from "@mui/icons-material/EditNote";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditDocumentIcon from "@mui/icons-material/EditDocument";
 
 export default function JobApplication({ data, onDelete }) {
   function statusClass() {
@@ -37,9 +39,13 @@ export default function JobApplication({ data, onDelete }) {
         </span>
       </div>
       <div className="actions">
-        <span className="cursor edit">Edit</span>
+        <span className="cursor edit">
+          <EditDocumentIcon />
+          <span>Edit</span>
+        </span>
         <span className="cursor delete" onClick={() => onDelete(data.id)}>
-          Delete
+          <DeleteIcon />
+          <span>Delete</span>
         </span>
       </div>
     </div>

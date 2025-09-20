@@ -14,7 +14,7 @@ export default function Filters({ applications, setFilteredData }) {
       setFilteredData(applications);
     } else {
       const filtered = applications.filter(
-        (applications) => applications.status.toLowerCase() === value
+        (application) => application.status.toLowerCase() === value
       );
       setFilteredData(filtered);
     }
