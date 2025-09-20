@@ -422,14 +422,21 @@ body {
       .form-container {
         padding: 1rem;
         .form-window {
-          height: 100%;
+          height: fit-content;
           width: 100%;
+          max-width: 40rem;
           overflow: scroll;
+          padding: 2rem;
+
+          .form-header {
+            margin-bottom: 1rem;
+          }
 
           form {
             .form-row {
               gap: 1rem;
               flex-direction: column;
+              margin-bottom: 1rem;
             }
           }
         }
@@ -486,7 +493,6 @@ body {
                 button {
                   padding: 0.7rem;
                   height: 3rem;
-                  gap: 0;
                 }
               }
 
