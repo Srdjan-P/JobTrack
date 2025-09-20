@@ -49,6 +49,7 @@ const initialApplications = [
 export default function App() {
   const [applications, setApplications] = useState(initialApplications);
   const [isOpen, setIsOpen] = useState(false);
+  const [filteredData, setFilteredData] = useState(applications);
 
   function handleAddApplication(application) {
     setApplications((applications) => [...applications, application]);
@@ -67,11 +68,15 @@ export default function App() {
         <Stats applications={applications} />
       </Header>
       <Main>
-        <Filters />
+        <Filters
+          applications={applications}
+          setFilteredData={setFilteredData}
+        />
         <JobApplicationsList
           applications={applications}
           onOpen={setIsOpen}
           onDelete={handleDeleteApp}
+          filteredData={filteredData}
         />
       </Main>
       {isOpen && (

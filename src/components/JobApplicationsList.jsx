@@ -2,9 +2,9 @@ import Button from "./Button";
 import JobApplication from "./JobApplication";
 
 export default function JobApplicationsList({
-  applications,
   onOpen,
   onDelete,
+  filteredData,
 }) {
   return (
     <div className="jobs-container">
@@ -15,7 +15,7 @@ export default function JobApplicationsList({
         </Button>
       </div>
       <div className="jobs-list">
-        {applications.map((data) => (
+        {filteredData.map((data) => (
           <JobApplication data={data} key={data.id} onDelete={onDelete} />
         ))}
       </div>
