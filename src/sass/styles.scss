@@ -283,6 +283,15 @@ body {
               display: flex;
               justify-content: space-between;
               color: gray;
+
+              .delete {
+                color: red;
+                font-weight: 600;
+              }
+              .edit {
+                color: $darkerColor;
+                font-weight: 600;
+              }
             }
           }
         }
@@ -378,11 +387,6 @@ body {
   cursor: pointer;
 }
 
-.delete:hover {
-  color: red;
-  font-weight: 600;
-}
-
 .color {
   color: $primaryColor;
 }
@@ -421,6 +425,7 @@ body {
       }
       .form-container {
         padding: 1rem;
+
         .form-window {
           height: fit-content;
           width: 100%;
