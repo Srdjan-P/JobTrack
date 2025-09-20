@@ -6,7 +6,7 @@
 
 A modern, responsive web application to track and manage your job applications throughout your job search journey.
 
-![JobTrack Screenshot](./screenshot.png)
+![JobTrack Screenshot](./screenshot.PNG)
 
 ## ✨ Features
 
