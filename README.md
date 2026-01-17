@@ -117,9 +117,3 @@ Vite for fast build tooling
 Material UI for beautiful icons
 
 Inspiration from job seekers everywhere
-
-```
-
-```
-
-```
