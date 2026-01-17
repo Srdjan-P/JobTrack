@@ -123,9 +123,3 @@ Inspiration from job seekers everywhere
 ```
 
 ```
-
-```
-
-```
-
-```
